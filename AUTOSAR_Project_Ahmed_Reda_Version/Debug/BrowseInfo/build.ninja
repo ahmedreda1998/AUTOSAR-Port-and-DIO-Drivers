@@ -1,0 +1,163 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\XclFileGenerator.exe $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\XclFileGenerator.exe" $flags
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\SourceIndexer.exe $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\SourceIndexer.exe" $flags
+
+rule MAKEBROWSE
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\makeBrowseData.exe $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\makeBrowseData.exe" $flags
+
+rule PDBLINK
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\PbdLink.exe $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\PbdLink.exe" $flags
+
+
+
+#Build steps
+build D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\App.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\App.c" -xcl_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\App.xcl" -macro_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\App.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\App.c" -o "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\App.tmp"
+  rspfile_name = D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\App.xcl.rsp
+
+build D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Button.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Button.c" -xcl_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Button.xcl" -macro_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Button.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Button.c" -o "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Button.tmp"
+  rspfile_name = D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Button.xcl.rsp
+
+build D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\cstartup_M.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\cstartup_M.c" -xcl_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\cstartup_M.xcl" -macro_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\cstartup_M.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\cstartup_M.c" -o "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\cstartup_M.tmp"
+  rspfile_name = D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\cstartup_M.xcl.rsp
+
+build D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Det.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Det.c" -xcl_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Det.xcl" -macro_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Det.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Det.c" -o "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Det.tmp"
+  rspfile_name = D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Det.xcl.rsp
+
+build D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Dio.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Dio.c" -xcl_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Dio.xcl" -macro_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Dio.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Dio.c" -o "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Dio.tmp"
+  rspfile_name = D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Dio.xcl.rsp
+
+build D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Dio_PBcfg.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Dio_PBcfg.c" -xcl_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Dio_PBcfg.xcl" -macro_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Dio_PBcfg.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Dio_PBcfg.c" -o "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Dio_PBcfg.tmp"
+  rspfile_name = D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Dio_PBcfg.xcl.rsp
+
+build D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Gpt.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Gpt.c" -xcl_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Gpt.xcl" -macro_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Gpt.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Gpt.c" -o "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Gpt.tmp"
+  rspfile_name = D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Gpt.xcl.rsp
+
+build D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Led.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Led.c" -xcl_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Led.xcl" -macro_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Led.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Led.c" -o "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Led.tmp"
+  rspfile_name = D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Led.xcl.rsp
+
+build D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\main.c" -xcl_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\main.xcl" -macro_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\main.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\main.c" -o "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\main.tmp"
+  rspfile_name = D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\main.xcl.rsp
+
+build D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Os.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Os.c" -xcl_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Os.xcl" -macro_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Os.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Os.c" -o "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Os.tmp"
+  rspfile_name = D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Os.xcl.rsp
+
+build D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Port.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Port.c" -xcl_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Port.xcl" -macro_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Port.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Port.c" -o "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Port.tmp"
+  rspfile_name = D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Port.xcl.rsp
+
+build D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Port_PBcfg.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Port_PBcfg.c" -xcl_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Port_PBcfg.xcl" -macro_file "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Port_PBcfg.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Port_PBcfg.c" -o "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Port_PBcfg.tmp"
+  rspfile_name = D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Port_PBcfg.xcl.rsp
+
+build D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\App.pbi : INDEXER D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\App.xcl |  $
+D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\App.c
+  flags = "-out=D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\App.pbi" -f "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\App.xcl"
+
+build D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Button.pbi : INDEXER D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Button.xcl |  $
+D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Button.c
+  flags = "-out=D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Button.pbi" -f "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Button.xcl"
+
+build D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\cstartup_M.pbi : INDEXER D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\cstartup_M.xcl |  $
+D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\cstartup_M.c
+  flags = "-out=D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\cstartup_M.pbi" -f "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\cstartup_M.xcl"
+
+build D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Det.pbi : INDEXER D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Det.xcl |  $
+D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Det.c
+  flags = "-out=D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Det.pbi" -f "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Det.xcl"
+
+build D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Dio.pbi : INDEXER D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Dio.xcl |  $
+D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Dio.c
+  flags = "-out=D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Dio.pbi" -f "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Dio.xcl"
+
+build D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Dio_PBcfg.pbi : INDEXER D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Dio_PBcfg.xcl |  $
+D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Dio_PBcfg.c
+  flags = "-out=D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Dio_PBcfg.pbi" -f "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Dio_PBcfg.xcl"
+
+build D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Gpt.pbi : INDEXER D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Gpt.xcl |  $
+D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Gpt.c
+  flags = "-out=D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Gpt.pbi" -f "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Gpt.xcl"
+
+build D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Led.pbi : INDEXER D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Led.xcl |  $
+D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Led.c
+  flags = "-out=D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Led.pbi" -f "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Led.xcl"
+
+build D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\main.pbi : INDEXER D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\main.xcl |  $
+D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\main.c
+  flags = "-out=D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\main.pbi" -f "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\main.xcl"
+
+build D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Os.pbi : INDEXER D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Os.xcl |  $
+D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Os.c
+  flags = "-out=D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Os.pbi" -f "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Os.xcl"
+
+build D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Port.pbi : INDEXER D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Port.xcl |  $
+D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Port.c
+  flags = "-out=D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Port.pbi" -f "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Port.xcl"
+
+build D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Port_PBcfg.pbi : INDEXER D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Port_PBcfg.xcl |  $
+D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Port_PBcfg.c
+  flags = "-out=D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Port_PBcfg.pbi" -f "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Port_PBcfg.xcl"
+
+build D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\AUTOSAR_Project.pbw : MAKEBROWSE D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\AUTOSAR_Project.pbd
+  flags = "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\AUTOSAR_Project.pbd" -output "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\AUTOSAR_Project.pbw"
+
+build D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\AUTOSAR_Project_part0.pbi : PDBLINK D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\App.pbi |  $
+D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Button.pbi $
+D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\cstartup_M.pbi
+  flags = -M "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\AUTOSAR_Project_part0.pbi" "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\App.pbi" "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Button.pbi" "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\cstartup_M.pbi"
+
+build D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\AUTOSAR_Project_part1.pbi : PDBLINK D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Det.pbi |  $
+D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Dio.pbi $
+D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Dio_PBcfg.pbi
+  flags = -M "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\AUTOSAR_Project_part1.pbi" "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Det.pbi" "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Dio.pbi" "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Dio_PBcfg.pbi"
+
+build D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\AUTOSAR_Project_part2.pbi : PDBLINK D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Gpt.pbi |  $
+D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Led.pbi $
+D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\main.pbi
+  flags = -M "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\AUTOSAR_Project_part2.pbi" "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Gpt.pbi" "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Led.pbi" "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\main.pbi"
+
+build D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\AUTOSAR_Project_part3.pbi : PDBLINK D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Os.pbi |  $
+D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Port.pbi $
+D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Port_PBcfg.pbi
+  flags = -M "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\AUTOSAR_Project_part3.pbi" "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Os.pbi" "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Port.pbi" "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\Port_PBcfg.pbi"
+
+build D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\AUTOSAR_Project.pbd : PDBLINK D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\AUTOSAR_Project_part0.pbi |  $
+D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\AUTOSAR_Project_part1.pbi $
+D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\AUTOSAR_Project_part2.pbi $
+D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\AUTOSAR_Project_part3.pbi
+  flags = -M "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\AUTOSAR_Project.pbd" "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\AUTOSAR_Project_part0.pbi" "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\AUTOSAR_Project_part1.pbi" "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\AUTOSAR_Project_part2.pbi" "D$:\M.T$ ARM$ Microcontroller$ &$ AUTOSAR\AUTOSAR_Project_Ahmed_Reda_Version\Debug\BrowseInfo\AUTOSAR_Project_part3.pbi"
+
